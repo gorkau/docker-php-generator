@@ -1,0 +1,21 @@
+{
+    "name": "gorkau/docker-php-generator",
+    "description": "A tool for creating Docker Images for PHP",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    },
+    "license": "GPL",
+    "autoload": {
+        "psr-4": {
+            "Gorkau\\DockerPhpGenerator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gorka",
+            "email": "contactar@urlanheat.com"
+        }
+    ],
+    "require": {}
+}

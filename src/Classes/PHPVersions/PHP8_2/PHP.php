@@ -8,6 +8,8 @@ use Gorkau\DockerPhpGenerator\Classes\PHPVersions\PHP8_2\Gd;
 class PHP implements PHPVersionInterface
 {
     const CONCATENATOR = " && ";
+    private $modules = [];
+
     public function __construct(array $modules) {
         foreach($modules as $module) {
             $moduleClass = __NAMESPACE__ . "\\{$module}";

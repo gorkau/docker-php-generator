@@ -10,7 +10,7 @@ class DockerGenerator
 
     public function generate()
     {
-        $file = "FROM: " . $this->php->phpBaseName() . PHP_EOL;
+        $file = "FROM " . $this->php->phpBaseName() . PHP_EOL;
 
         $file .= $this->php->libsInstallation() . PHP_EOL;
         $file .= $this->php->phpModulesConfiguration() . PHP_EOL;

@@ -5,11 +5,11 @@
     $ composer install
 ## Usage
 
-  $ php src/index.php
+    $ php src/index.php
 
 ## Run tests
 
-  $ vendor/phpunit/phpunit/phpunit --color tests/
+    $ vendor/phpunit/phpunit/phpunit --color tests/
 
 ## Status
 

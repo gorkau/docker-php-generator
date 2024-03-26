@@ -1,5 +1,9 @@
 <?php
 
+if (!file_exists('../vendor/autoload.php')) {
+    echo "I can't find vendor/autoload. There are two possible solutions:\n\n  1) Try to run script inside 'src/' folder.\n  2) If 'vendor' folder is not present try: composer install.\n";
+    return false;
+}
 require('../vendor/autoload.php');
 
 use Gorkau\DockerPhpGenerator\Classes\DockerGenerator;
@@ -7,7 +11,6 @@ use Gorkau\DockerPhpGenerator\Classes\Output;
 use Gorkau\DockerPhpGenerator\Classes\PHPVersions\PHPVersionFactory;
 use Gorkau\DockerPhpGenerator\Classes\UserInput;
 use Gorkau\DockerPhpGenerator\Classes\UserInputReader;
-
 
 $userInputReader = new UserInputReader();
 $output = new Output();

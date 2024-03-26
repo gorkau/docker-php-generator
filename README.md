@@ -2,14 +2,19 @@
 
 ## Installation
 
-    $ composer install
+    composer install
 ## Usage
+To execute it you need to be in src folder:
 
-    $ php src/index.php
+    cd src
+Then:
+
+    php index.php
 
 ## Run tests
+Tests execution is done in the main folder of the proyect.
 
-    $ vendor/phpunit/phpunit/phpunit --color tests/
+    vendor/phpunit/phpunit/phpunit --color tests/
 
 ## Status
 

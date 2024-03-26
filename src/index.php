@@ -33,6 +33,13 @@ $php = new PHPVersionFactory($phpVersion, $modules);
 //$wwwDataId = (new UserInput($userInputReader, $output, "ID for www-data (usually 33)?", [], true))->get();
 
 $dockerGenerator = new DockerGenerator($php->get());
-$dockerFile = $dockerGenerator->generate();
 
-echo $dockerFile;
+if (!file_exists(__DIR__ . '/../dist/docker/php/')) {
+    mkdir(__DIR__ . '/../dist/docker/php/', recursive: true);
+}
+
+copy(__DIR__ . '/Templates/docker-compose.yml', __DIR__ . '/../dist/docker-compose.yml');
+
+if (file_put_contents(__DIR__ . '/../dist/docker/php/Dockerfile', $dockerGenerator->generate())===false) {
+    echo "PHP Dockerfile could not be created";
+}

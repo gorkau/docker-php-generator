@@ -11,6 +11,18 @@ Then:
 
     php index.php
 
+This will generate the following folder structure:
+
+    dist/
+      docker/
+        php/
+          Dockerfile
+      docker-compose.yml
+
+So, once generated just enter dist/ folder an execute
+
+    docker-compose up --build
+
 ## Run tests
 Tests execution is done in the main folder of the proyect.
 
@@ -18,4 +30,5 @@ Tests execution is done in the main folder of the proyect.
 
 ## Status
 
-[2024/03/23] Just started. It just generates a PHP-FPM 8.2 based Docker file with gd extension.
+[2024/03/26] Added MySQL. It now creates all needed files (Dockerfile and docker-compose.yml).
+[2024/03/23] Just started. It just generates a PHP-FPM 8.2 based Dockerfile with gd extension.

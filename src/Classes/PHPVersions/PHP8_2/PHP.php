@@ -28,7 +28,9 @@ class PHP implements PHPVersionInterface
         $modules = [];
 
         foreach($this->modules as $module) {
-            $modules[] = $module->libInstallation();
+            if ($module->libInstallation()) {
+                $modules[] = $module->libInstallation();
+            }
         }
 
         if (count($modules)) {
@@ -44,7 +46,9 @@ class PHP implements PHPVersionInterface
         $modules = [];
 
         foreach($this->modules as $module) {
-            $modules[] = $module->moduleConfiguration();
+            if ($module->moduleConfiguration()) {
+                $modules[] = $module->moduleConfiguration();
+            }
         }
 
         if (count($modules)) {
@@ -60,7 +64,9 @@ class PHP implements PHPVersionInterface
         $modules = [];
 
         foreach($this->modules as $module) {
-            $modules[] = $module->moduleInstallation();
+            if ($module->moduleInstallation()) {
+                $modules[] = $module->moduleInstallation();
+            }
         }
 
         if (count($modules)) {

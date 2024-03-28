@@ -15,6 +15,7 @@ class DockerGenerator
         $file .= $this->php->libsInstallation() . PHP_EOL;
         $file .= $this->php->phpModulesConfiguration() . PHP_EOL;
         $file .= $this->php->phpModulesInstallation() . PHP_EOL;
+        $file .= $this->php->phpModulesEnable() . PHP_EOL;
 
         return $file;
     }

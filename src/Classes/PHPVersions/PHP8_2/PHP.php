@@ -75,4 +75,22 @@ class PHP implements PHPVersionInterface
 
         return $phpModulesInstallation;
     }
+
+    public function phpModulesEnable() : string
+    {
+        $phpModulesEnable = "";
+        $modules = [];
+
+        foreach($this->modules as $module) {
+            if ($module->moduleEnable()) {
+                $modules[] = $module->moduleEnable();
+            }
+        }
+
+        if (count($modules)) {
+            $phpModulesEnable = "RUN " . implode($this::CONCATENATOR, $modules);
+        }
+
+        return $phpModulesEnable;
+    }
 }

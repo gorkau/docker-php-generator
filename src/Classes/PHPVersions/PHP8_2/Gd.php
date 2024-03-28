@@ -18,4 +18,9 @@ class Gd implements ModuleInterface
     {
         return "docker-php-ext-install -j$(nproc) gd";
     }
+
+    public function moduleEnable(): string
+    {
+        return "";
+    }
 }

@@ -7,4 +7,5 @@ interface ModuleInterface
     public function libInstallation(): string;
     public function moduleConfiguration(): string;
     public function moduleInstallation(): string;
+    public function moduleEnable(): string;
 }

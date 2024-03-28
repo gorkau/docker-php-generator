@@ -19,4 +19,9 @@ class MySQL implements ModuleInterface
     {
         return 'docker-php-ext-install mysqli pdo pdo_mysql';
     }
+
+    public function moduleEnable(): string
+    {
+        return 'docker-php-ext-enable pdo_mysql';
+    }
 }

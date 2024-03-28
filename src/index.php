@@ -18,8 +18,8 @@ $output = new Output();
 $modules = [];
 
 $phpVersion = (new UserInput($userInputReader, $output, "What PHP version do you want?", ["8.2"], true))->get();
-//$isXDebug = (new UserInput($userInputReader, $output, "Do you want XDebug?", ["Y", "N"], true))->get();
 $isGd = (new UserInput($userInputReader, $output, "Do you want gd?", ["Y", "N"], true))->get();
+
 if ($isGd=='Y') {
     $modules[] = 'Gd';
 }
@@ -29,8 +29,15 @@ if ($isMySQL=='Y') {
     $modules[] = 'MySQL';
 }
 
+$isXDebug = (new UserInput($userInputReader, $output, "Do you want XDebug?", ["Y", "N"], true))->get();
+if ($isXDebug=='Y') {
+    $modules[] = 'XDebug';
+}
+
 $php = new PHPVersionFactory($phpVersion, $modules);
 //$wwwDataId = (new UserInput($userInputReader, $output, "ID for www-data (usually 33)?", [], true))->get();
+
+// Add Composer?
 
 $dockerGenerator = new DockerGenerator($php->get());
 

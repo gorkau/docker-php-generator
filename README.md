@@ -24,7 +24,7 @@ So, once generated just enter dist/ folder an execute
     docker-compose up --build
 
 ## Run tests
-Tests execution is done in the main folder of the proyect.
+Tests execution is done in the main folder of the project:
 
     vendor/phpunit/phpunit/phpunit --color tests/
 

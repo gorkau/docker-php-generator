@@ -24,7 +24,7 @@ class PHP implements PHPVersionInterface
 
     public function libsInstallation() : string
     {
-        $libsInstallation = "RUN apt update";
+        $libsInstallation = "";
         $modules = [];
 
         foreach($this->modules as $module) {
@@ -34,7 +34,9 @@ class PHP implements PHPVersionInterface
         }
 
         if (count($modules)) {
-            $libsInstallation .= $this::CONCATENATOR . implode($this::CONCATENATOR, $modules);
+            $libsInstallation .=
+                "RUN apt update" .
+                $this::CONCATENATOR . implode($this::CONCATENATOR, $modules);
         }
 
         return $libsInstallation;
